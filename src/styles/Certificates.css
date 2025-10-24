@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+
+.certificates-container {
+  padding: 40px;
+  min-height: 100vh;
+  font-weight: 700;
+  font-family: 'Exo 2', sans-serif;
+  font-style: italic;
+  background: url('public/images/certificate.jpg') center center / cover no-repeat;
+  background-attachment: fixed;
+  color: #f0eaff;
+  position: relative;
+  overflow: hidden;
+  
+  z-index: 0;
+}
+
+/* ✨ Background glow/motion handled by overlay instead of image zoom */
+.certificates-container::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle at center, rgba(255, 192, 255, 0.02), transparent 60%);
+  animation: sunray-spin 120s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Title */
+.section-title2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #ffe6ff;
+  margin-bottom: 40px;
+  position: relative;
+  text-shadow: 0 0 20px rgba(255, 190, 255, 0.3);
+  animation: fadeInOpacity 1.2s ease-in-out forwards;
+  z-index: 1;
+  opacity: 0;
+  font-family: 'Exo 2', sans-serif;
+  font-style: italic;
+}
+
+/* Filter tabs */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInOpacity 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.tab {
+  background-color: #1a0828;
+  color: #ffccff;
+  border: 2px solid #e966ff;
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Exo 2', sans-serif;
+  font-style: italic;
+}
+
+.tab.active,
+.tab:hover {
+  background-color: #e966ff;
+  color: #1a0828;
+  box-shadow: 0 0 16px #e966ffcc;
+}
+
+/* Certificate grid */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInOpacity 1.2s ease forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+/* Card styling */
+.cert-card {
+  background: rgba(40, 10, 60, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 192, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 28px rgba(255, 160, 255, 0.5);
+}
+
+/* View button */
+.view-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: #ffffff11;
+  color: #f5e6ff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.view-button:hover {
+  background-color: #ffffff22;
+  box-shadow: 0 6px 16px rgba(255, 170, 255, 0.4);
+}
+
+/* Animations */
+@keyframes fadeInOpacity {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sunray-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: cardFadeIn 0.6s ease forwards;
+}
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes cardFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

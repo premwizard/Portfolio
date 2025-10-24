@@ -1,0 +1,188 @@
+/* Galaxy themed custom cursor styles */
+/* Hide native cursor globally; component also toggles this as needed */
+body {
+  cursor: none;
+}
+
+
+/* === Enhanced Galaxy Cursor Core & Orbit === */
+.galaxy-core {
+  /* Reworked cosmic core: nebula-like multi-layered gradient with inner glow */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255,255,255,0.95) 0%, rgba(180,226,255,0.7) 12%, rgba(140,200,255,0.25) 30%, rgba(120,80,255,0.12) 55%, transparent 70%),
+    radial-gradient(circle at 70% 70%, rgba(255,230,200,0.9) 0%, rgba(255,160,90,0.12) 20%, rgba(200,90,255,0.06) 45%, transparent 60%),
+    conic-gradient(from 180deg at 50% 50%, rgba(255,255,255,0.02), rgba(140,80,255,0.06));
+  box-shadow:
+    0 0 6px 2px rgba(155, 232, 255, 0.9),
+    0 0 18px 6px rgba(123, 67, 255, 0.35),
+    inset 0 1px 3px rgba(255,255,255,0.25);
+  filter: drop-shadow(0 0 8px rgba(120,80,255,0.15));
+  animation: galaxy-core-nebula 2200ms ease-in-out infinite alternate;
+}
+
+@keyframes galaxy-core-nebula {
+  0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.9; filter: drop-shadow(0 0 6px rgba(120,80,255,0.08)); }
+  100% { transform: translate(-50%, -50%) scale(1.12); opacity: 1; filter: drop-shadow(0 0 14px rgba(120,80,255,0.18)); }
+}
+
+/* Add subtle glints and a faint halo using pseudo-elements through helper classes applied via markup */
+.galaxy-core::before,
+.galaxy-core::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.galaxy-core::before {
+  width: 46px; height: 46px;
+  background: radial-gradient(circle, rgba(155,232,255,0.06), transparent 40%);
+  filter: blur(6px);
+  z-index: -1;
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
+.galaxy-core::after {
+  width: 6px; height: 6px;
+  background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,0.6));
+  box-shadow: 0 0 6px rgba(255,255,255,0.9), 0 0 12px rgba(155,232,255,0.7);
+  transform: translate(-40%, -40%) scale(1);
+  animation: galaxy-core-glint 1400ms ease-in-out infinite;
+}
+
+@keyframes galaxy-core-glint {
+  0% { transform: translate(-46%, -46%) scale(0.9); opacity: 0.6; }
+  50% { transform: translate(-38%, -38%) scale(1.15); opacity: 1; }
+  100% { transform: translate(-46%, -46%) scale(0.95); opacity: 0.7; }
+}
+
+.galaxy-orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 70px;
+  height: 70px;
+  transform-origin: center;
+  transform: translate(-50%, -50%) rotate(0deg);
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(155, 232, 255, 0.18),
+    rgba(255, 255, 255, 0.06),
+    transparent 70%,
+    rgba(123, 67, 255, 0.18)
+  );
+  filter: blur(8px);
+  mix-blend-mode: screen;
+  animation: galaxy-orbit-spin 6s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes galaxy-orbit-spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+}
+
+.galaxy-cursor {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: opacity 200ms ease, transform 120ms ease;
+  opacity: 0;
+  mix-blend-mode: screen;
+}
+
+
+
+
+.galaxy-particle {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff, #9be8ff 40%, #8a4bff 80%);
+  box-shadow: 0 0 6px #9be8ff, 0 0 12px rgba(194,123,255,0.8);
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 9998;
+  transition: opacity 200ms linear;
+}
+
+.galaxy-ripple {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(155,232,255,0.8), rgba(123,67,255,0.18));
+  transform: translate(-50%, -50%) scale(0.6);
+  filter: blur(2px);
+  pointer-events: none;
+  z-index: 9997;
+  animation: galaxy-ripple 700ms ease-out forwards;
+}
+
+@keyframes galaxy-ripple {
+  0% { opacity: 0.95; transform: translate(-50%, -50%) scale(0.6); }
+  60% { opacity: 0.35; transform: translate(-50%, -50%) scale(2.6); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(3.2); }
+}
+
+/* Reduced motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  .galaxy-orbit { display: none; }
+  .galaxy-particle { display: none; }
+  .galaxy-cursor { transition: none; }
+}
+
+/* Small screen adjustments */
+@media (max-width: 600px) {
+  .galaxy-cursor { width: 26px; height: 26px; }
+  .galaxy-orbit { width: 40px; height: 40px; }
+  .galaxy-core { width: 10px; height: 10px; }
+}
+
+/* Canvas-based cursor styling (the canvas covers the screen and is pointer-events: none) */
+.galaxy-cursor-canvas {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Hide rotating '+' icon elements if present; keep them in DOM for JS hooks but visually suppressed */
+.galaxy-cursor .galaxy-plus,
+.galaxy-cursor .cursor-plus,
+.galaxy-cursor .plus-icon,
+.galaxy-core .plus-icon,
+.plus-icon {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+}
+
+/* If the plus was created as pseudo-element on the core, neutralize it */
+.galaxy-core::marker,
+.galaxy-core::first-letter,
+.galaxy-core::selection {
+  display: none;
+}

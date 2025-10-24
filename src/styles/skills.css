@@ -1,0 +1,210 @@
+/* === Skills Section === */
+.skills-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  color: #dfd0b6ff;
+  font-family: 'Roboto Mono', monospace;
+  font-style: italic;
+  font-weight: 300;
+  z-index: 1;
+}
+
+/* Backgrounds (Stars + Video) */
+.skills-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.skills-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5) contrast(1.2);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* === Floating Stardust Layer === */
+.skills-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity: 0.07;
+  animation: slowDrift 80s linear infinite;
+  z-index: -2;
+}
+
+@keyframes slowDrift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-500px, -300px); }
+}
+
+/* Content Wrapper */
+.skills-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Category Groups */
+.skills-group {
+  margin: 2rem 0;
+}
+
+.skills-heading {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  font-style: italic;
+  background: linear-gradient(90deg, #ffdc7d, #a1c4fd, #f8cdda);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: hueShift 5s linear infinite;
+}
+
+@keyframes hueShift {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Grid Layout */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Skill Item */
+.skill-item {
+  flex: 0 1 140px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  font-style: italic;
+  font-weight: 300;
+  box-sizing: border-box;
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+/* === Floating Animation === */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* === Hover Glow + Lift === */
+.skill-item:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15),
+              0 0 30px rgba(100, 150, 255, 0.25);
+  border: 1px solid rgba(200, 220, 255, 0.4);
+}
+
+/* === Animated Border Pulse === */
+.skill-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb, #ffdc7d);
+  background-size: 300% 300%;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+.skill-item:hover::before {
+  opacity: 0.5;
+  animation: gradientFlow 3s linear infinite;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Icon / Placeholder === */
+.skill-icon,
+.skill-placeholder {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  width: 50px;
+  text-align: center;
+  transition: transform 0.4s ease, text-shadow 0.4s ease;
+}
+
+/* Icon animation on hover */
+.skill-item:hover .skill-icon {
+  transform: scale(1.2);
+  text-shadow: 0 0 20px #9fe8ff, 0 0 40px #9fe8ff;
+}
+
+/* === Skill Name === */
+.skill-name {
+  font-size: 1rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.skill-item:hover .skill-name {
+  color: #f5f2ff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .skills-heading {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-item {
+    flex: 0 1 100px;
+    height: 100px;
+  }
+  .skill-icon {
+    font-size: 2rem;
+  }
+  .skill-name {
+    font-size: 0.9rem;
+  }
+}
