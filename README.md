@@ -99,6 +99,3 @@ If you want to contribute or make changes:
 ## License & Copyright
 
 Copyright © 2025 M. Prem. All rights reserved.
-
-If you want this project to be MIT/Apache etc., tell me and I can add a LICENSE file.
-
