@@ -24,8 +24,8 @@ const ResumePage = () => {
 
         {/* Floating Download Button */}
   <Motion.a
-          href="public/assets/GENERAL RESUME.pdf"
-          download="public/assets/GENERAL RESUME.pdf"
+          href="public/images/GENERAL RESUME.pdf"
+          download="public/images/GENERAL RESUME.pdf"
           className="floating-download"
           title="Download Resume"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -40,7 +40,7 @@ const ResumePage = () => {
 
         {/* Resume Image */}
   <Motion.img
-          src="public/assets/image.png"
+          src="public/images/image.png"
           alt="Resume"
           className="resume-iframe"
           initial={{ opacity: 0, scale: 0.95 }}
