@@ -1,9 +1,11 @@
+import { title } from "framer-motion/client";
+
 const _rawCertificateData = [
 {
   title: "Artificial Intelligence Fundamentals",
   issuer: "GREAT LEARNING",
   date: "AUG 2024",
-  link: "public/certificates/GREAT LEARNING/great_learning_ai.png",
+  link: "https://drive.google.com/file/d/1F76R0L4weRfG65C8wnYGEbpF9Mz2fXzb/view?usp=sharing",
   category: "AI/ML",
 },
 {
@@ -17,7 +19,7 @@ const _rawCertificateData = [
     title: "Generative AI of Beginners",
     issuer: "Great Learning",
     date: "Nov 2024",
-    link: "public/certificates/GREAT LEARNING/GEN AI.jpg",
+    link: "https://drive.google.com/file/d/1opevvwWvw287kInm5qjvxFNBTRsYIqyI/view?usp=sharing",
     category: "AI/ML",
 },
 {
@@ -129,7 +131,7 @@ const _rawCertificateData = [
     title: "Deep Learning",
     issuer: "Reccsar Private Limited",
     date: "NOV 2024",
-    link: "public/certificates/WORKSHOP/DL.jpg",
+    link: "https://drive.google.com/file/d/1JlyGv7FOCr0gTtN7HqKhJSdsVvjV_kvP/view?usp=sharing",
     category: "AI/ML",
 },
 {
@@ -150,7 +152,7 @@ const _rawCertificateData = [
     title: "Natural Language Processing",
     issuer: "Reccsar Private Limited",
     date: "NOV 2024",
-    link: "public/certificates/WORKSHOP/NLP.jpg",
+    link: "https://drive.google.com/file/d/1OAkp0uB9wyz-5FI_2vwEpCpK_TUx8S94/view?usp=sharing",
     category: "AI/ML",
 },
 {
@@ -192,7 +194,7 @@ const _rawCertificateData = [
     title: "Machine Learning",
     issuer: "EMGLITZ TECHNOLOGIES",
     date: "JAN 2025",
-    link: "public/certificates/OTHERS/intership.jpg",
+    link: "https://drive.google.com/file/d/1rlGq-DlhQdjmXtUImowxsNeyOkqhGFFo/view?usp=sharing",
     category: "AI/ML",
 },
 {
@@ -206,7 +208,7 @@ const _rawCertificateData = [
     title: "AI Masterclass: How AI Thinks",
     issuer: "SARAS AI INSTITUTE",
     date: "MAY 2025",
-    link: "public/certificates/ai_masterclass.pdf",
+    link: "https://drive.google.com/file/d/105vcVUNS-KyTTVk65rVZ8Hvr8sBDSHN6/view?usp=sharing",
     category: "AI/ML",
 },
 {
@@ -329,10 +331,10 @@ const _rawCertificateData = [
     category: "Web Development",
 },
 {
-    title: "Basics of Machine Learning Algrothims",
+    title: "Basics of Machine Learning Algorithms",
     issuer: "Uniathena",
     date: "Apr 2025",
-    link: "public/certificates/Prem_CR640_certificate.pdf",
+    link: "https://drive.google.com/file/d/14G5-QG-Wf5IiXWBdE1m-PQUs0MpynFld/view?usp=sharing",
     category: "AI/ML",
 },
 {
@@ -389,7 +391,7 @@ const _rawCertificateData = [
   title: "NVIDIA DEEP LEARNING",
   issuer: "GYAN GANGA INSTITUTE OF TECHNOLOGY AND SCIENCE",
   date: "JUL 2025",
-  link: "public/certificates/9048dd08-53cf-48c9-9844-a41ea9d9c666.jpg",
+  link: "https://drive.google.com/file/d/15StVMzDWUuXbtz0H3GjVzjet2YFPrAT7/view?usp=sharing",
   category: "AI/ML",
 },
 
@@ -461,14 +463,14 @@ const _rawCertificateData = [
     title: "Prompt Engineering",
     issuer: "Infosys SpringBoard",
     date: "Aug 2025",
-    link: "public/certificates/1-934437c8-65dd-4d27-b80a-a8fcde072b28.pdf",
+    link: "https://drive.google.com/file/d/1ZYYtEWVnnS2GMl2qX9UefbNf66w8mp8O/view?usp=sharing",
     category: "AI/ML",
 },
 {
     title: "Introduction to Machine Learning: Art of the Possible",
-    issuer: "AWS SkillBuilder",
+    issuer: "AWS Training and Certification",
     date: "July 2025",
-    link: "public/certificates/a34326ab-4c9d-4dcd-aaf6-d9dc5d2352f8.pdf",
+    link: "https://drive.google.com/file/d/1q7iF0PtGNTVA5MEHq4o5UtxHTKSqPE3B/view?usp=sharing",
     category: "AI/ML",
 },
 {
@@ -480,17 +482,115 @@ const _rawCertificateData = [
 },
 {
     title: "Fundamentals of Machine Learning and Artificial Intelligence",
-    issuer: "AWS SkillBuilder",
+    issuer: "AWS Training and Certification",
     date: "Aug 2025",
-    link: "public/certificates/1de9fd7e-593a-4f3d-b7fd-4583ba8823d5.pdf",
+    link: "https://drive.google.com/file/d/1nkzp81NG_Zwiyh5W-wLwfykh0iOSPiI9/view?usp=sharing",
     category: "AI/ML",
 },
 {
     title: "Azure AI Fundamentals",
     issuer: "Microsoft",
     date: "Sep 2025",
-    link: "public/certificates/Azure AI Fundamentals.pdf",
+    link: "https://drive.google.com/file/d/1p1lLS18B673mL-LfGNlG8frkDIcqmmB8/view?usp=sharing",
     category: "AI/ML",
+},
+{
+    title: "Mastering Algorithms and Data Structures in Python",
+    issuer: "Code Signal",
+    date: "Sep 2025",
+    link: "https://drive.google.com/file/d/1qlGAkfx47ut9UxqhMZuFBbMvUMnXjOTc/view?usp=sharing",
+    category: "Python",
+},
+{
+    title: "Introduction to HTML",
+    issuer: "Code Signal",
+    date: "Sep 2025",
+    link: "https://drive.google.com/file/d/1eFU9BHnaIRM6wbusOUiw1DjC8c1778Nl/view?usp=sharing",
+    category: "Web Development",
+},
+{
+    title: "Basic of CSS",
+    issuer: "Code Signal",
+    date: "Sep 2025",
+    link: "https://drive.google.com/file/d/118EOu0dyCEBYOMtgT4t4stw65KA142Fc/view?usp=sharing",
+    category: "Web Development",
+},
+{
+    title: "Machine Learning Essentials for Business and Technical Decision Makers",
+    issuer: "AWS Training and Certification",
+    date: "Oct 2025",
+    link: "https://drive.google.com/file/d/1aVBYzOuJSlsKIBNkdLkUeJRMnXBRFqOb/view?usp=sharing",
+    category: "AI/ML",
+},
+{
+    title: "Machine Learning Terminology and Process",
+    issuer: "AWS Training and Certification",
+    date: "Oct 2025",
+    link: "https://drive.google.com/file/d/1OG4D6YvFNPbo3WGHRtvgh4OCIdOPjrSJ/view?usp=sharing",
+    category: "AI/ML",
+},
+{
+    title: "Introduction to Amazon SageMaker",
+    issuer: "AWS Training and Certification",
+    date: "Oct 2025",
+    link: "https://drive.google.com/file/d/1Ru-_Rc7JvKnyFY5vV-v1yasCBgqheHd9/view?usp=sharing",
+    category: "AI/ML",
+},
+{
+    title: "Planning a Machine Learning Project",
+    issuer: "AWS Training and Certification",
+    date: "Oct 2025",
+    link: "https://drive.google.com/file/d/1ec-bCrTz5uugi7U3oO2y4MBypQRWU7rK/view?usp=sharing",
+    category: "AI/ML",
+},
+{
+    title: "Machine Learning Learning Plan",
+    issuer: "AWS Training and Certification",
+    date: "Oct 2025",
+    link: "https://drive.google.com/file/d/1fenPWUcpizGRaajEsM7TxXIciV5y4ymQ/view?usp=sharing",
+    category: "AI/ML",
+},
+{
+    title: "Get Started with Databricks for Data Engineering",
+    issuer: "Databricks Academy",
+    date: "Oct 2025",
+    link: "https://drive.google.com/file/d/1X5makojogRLSZPHU2PRZnALT30QQzASD/view?usp=sharing",
+    category: "Others",
+},
+{
+    title: "Databricks Accredited Generative AI Fundamentals",
+    issuer: "Databricks Academy",
+    date: "Oct 2025",
+    link: "https://drive.google.com/file/d/1DQJHeTVeVkruKl807332W3zD3769S-Zp/view?usp=sharing",
+    category: "AI/ML",
+},
+{
+    title: "AWS Databricks Platform Architect",
+    issuer: "Databricks Academy",
+    date: "Oct 2025",
+    link: "https://drive.google.com/file/d/112G5k0HgOzlSv96NZsGM7nSOuJRAvxEX/view?usp=sharing",
+    category: "Cloud",
+},
+{
+    title: "Micro-Certification - Agentic AI Executive",
+    issuer: "ServiceNow",
+    date: "Sep 2025",
+    link: "https://drive.google.com/file/d/1ZUIATVwRx38dsCb9YSv2xGWmpS19npk6/view?usp=sharing",
+    category: "AI/ML",
+},
+{
+    title: "Foundation: Introduction to Langsmith",
+    issuer: "Langchain Academy",
+    date: "Aug 2025",
+    link: "https://drive.google.com/file/d/1LkxPLVltCsdYNl9uoKyDVJdDzfsjBadC/view?usp=sharing",
+    category: "AI/ML",
+},
+{
+    title: "Mastering Cloud Engineering with AWS and Python",
+    issuer: "Code Signal",
+    date: "Aug 2025",
+    link: "https://drive.google.com/file/d/18WR1_bpaKtEbdFlN5iPFtICIdY5dZK8P/view?usp=sharing",
+    category: "Cloud",
 }
 ];
 
