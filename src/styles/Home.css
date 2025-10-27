@@ -21,7 +21,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url('/public/images/Home.png') center center / cover no-repeat;
+  background: url('/images/Home.png') center center / cover no-repeat;
   animation: galaxyDrift 60s linear infinite;
   text-align: center;
   color: #e0d9ff;
@@ -31,7 +31,7 @@ html, body {
 /* === HIGH-RES DISPLAY SUPPORT (Retina/4K) === */
 @media screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
   .home-container {
-    background-image: url('public/images/Home.png'); /* use higher resolution version */
+  background-image: url('/images/Home.png'); /* use higher resolution version */
   }
 }
 
