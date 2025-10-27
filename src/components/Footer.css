@@ -53,19 +53,47 @@
 .footer-social a:focus { outline: 2px solid rgba(255,255,255,0.08); transform: translateY(-2px); }
 
 
-.footer-galaxy {
-  background: rgba(0, 0, 20, 0.6);
-  color: #c3aaff;
-  box-shadow: 0 0 15px #a86cffaa;
-  border-top: 1px solid #bb86fc33;
+.footer--home {
+  background: rgba(45, 0, 0, 0.35); /* 🔴 slightly deeper to match navbar */
+  color: #fff5f5;
+  box-shadow:
+    0 0 12px rgba(255, 94, 77, 0.25),
+    0 0 25px rgba(255, 60, 60, 0.15);
+  border-top: 1px solid rgba(255, 120, 90, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: footerGlow 4s ease-in-out infinite alternate;
+}
+
+/* === Footer Glow Animation === */
+@keyframes footerGlow {
+  0% {
+    box-shadow:
+      0 0 10px rgba(255, 94, 77, 0.3),
+      0 0 25px rgba(255, 60, 60, 0.15);
+    border-top-color: rgba(255, 120, 90, 0.25);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(255, 94, 77, 0.45),
+      0 0 40px rgba(255, 60, 60, 0.25);
+    border-top-color: rgba(255, 140, 100, 0.35);
+  }
+  100% {
+    box-shadow:
+      0 0 15px rgba(255, 94, 77, 0.35),
+      0 0 30px rgba(255, 60, 60, 0.2);
+    border-top-color: rgba(255, 120, 90, 0.25);
+  }
 }
 
 .footer-aurora {
+  /* Mirror navbar-about: dark with subtle stardust texture */
   position: relative;
-  background: rgba(0, 0, 0, 0.85);
-  color: white;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.7);
+  color: #e6fff9;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 12px rgba(0,0,0,0.08), 0 0 18px rgba(102,209,198,0.06);
   backdrop-filter: blur(6px);
   z-index: 5;
   overflow: hidden;
@@ -98,13 +126,14 @@
 /* cleaned unused grid/brand styles and unused keyframes */
 
 .footer-skills {
+  /* Mirror navbar-skills: darker, warm accent */
   position: relative;
   width: 100%;
-  background: rgba(10, 5, 20, 0.75);
+  background: rgba(12, 8, 30, 0.85);
   color: #f5e8c3;
-  box-shadow: 0 0 15px #ffc85755, 0 0 25px #76c7ff33;
-  border-top: 1px solid rgba(255, 200, 100, 0.25);
-  padding: 14px 0; /* match global footer padding to avoid increased height */
+  box-shadow: 0 0 12px rgba(255,200,120,0.06), 0 0 18px rgba(118,199,255,0.06);
+  border-top: 1px solid rgba(255,200,100,0.12);
+  padding: 14px 0; /* keep consistent height */
   text-align: center;
   font-size: 0.9rem;
   backdrop-filter: blur(6px);
@@ -112,14 +141,15 @@
 }
 
 .footer-education {
+  /* Mirror navbar-education: warm subtle tint */
   background: rgba(30, 10, 0, 0.65);
-  color: #ffcda5;
+  color: #ffd5c2;
   border-top: 1px solid rgba(255, 120, 80, 0.2);
   padding: 14px 0; /* normalize padding */
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
   backdrop-filter: blur(6px);
-  box-shadow: 0 0 20px rgba(255, 150, 100, 0.3);
+  box-shadow: 0 0 12px rgba(255,150,100,0.3);
   z-index: 10;
   position: relative;
   transition: 0.4s ease, color 0.4s ease;
@@ -131,16 +161,17 @@
 }
 
 .footer-certificates {
-  background: rgba(45, 0, 80, 0.65);
-  color: #ffd6fa;
+  /* Mirror navbar-certificates: rich violet glow */
+  background: rgba(45, 0, 80, 0.7);
+  color: #ffe0fa;
   text-align: center;
   font-size: 0.95rem;
-  box-shadow: 0 -4px 16px rgba(255, 160, 255, 0.3);
-  border-top: 1px solid rgba(255, 200, 255, 0.15);
+  box-shadow: 0 -4px 16px rgba(255, 144, 232, 0.45);
+  border-top: 1px solid rgba(255, 200, 255, 0.18);
   backdrop-filter: blur(8px);
   z-index: 5;
   position: relative;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .footer-certificates a {
@@ -155,13 +186,14 @@
 }
 
 .footer-contact {
-  background: rgba(5, 25, 30, 0.7);
+  /* Mirror navbar-contact: teal/aqua tone */
+  background: rgba(5, 25, 30, 0.75);
   color: #a0fff7;
   text-align: center;
   font-size: 0.95rem;
-  font-weight: 500;
-  box-shadow: 0 -4px 16px rgba(160, 255, 247, 0.15);
-  border-top: 1px solid rgba(94, 234, 212, 0.2);
+  font-weight: 600;
+  box-shadow: 0 -4px 18px rgba(160, 255, 247, 0.18);
+  border-top: 1px solid rgba(94, 234, 212, 0.25);
   backdrop-filter: blur(8px);
   position: relative;
   z-index: 5;
@@ -179,10 +211,10 @@
 }
 
 .footer-default {
-  background: rgba(30, 30, 30, 0.6);
-  color: #ffffffcc;
-  box-shadow: 0 0 10px #555;
-  border-top: 1px solid #444;
+  background: rgba(40, 40, 40, 0.8);
+  color: #fff;
+  box-shadow: 0 0 10px #333;
+  border-top: 1px solid rgba(0,0,0,0.12);
 }
 
 .footer p:hover {
@@ -464,3 +496,5 @@
   left: 0 !important;
   padding-left: 12px !important;
 }
+
+

@@ -12,7 +12,7 @@ html, body {
   box-sizing: border-box;
 }
 
-/* === HOME CONTAINER WITH GALAXY IMAGE === */
+/* === HOME CONTAINER === */
 .home-container {
   position: relative;
   width: 100vw;
@@ -24,28 +24,42 @@ html, body {
   background: url('/images/Home.png') center center / cover no-repeat;
   animation: galaxyDrift 60s linear infinite;
   text-align: center;
-  color: #e0d9ff;
+  color: #ffeaea; /* faint soft warm white */
   overflow: hidden;
 }
 
-/* === HIGH-RES DISPLAY SUPPORT (Retina/4K) === */
-@media screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
-  .home-container {
-  background-image: url('/images/Home.png'); /* use higher resolution version */
-  }
+/* === BACKGROUND VIDEO === */
+.home-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* === VIDEO OVERLAY (for contrast) === */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(25, 0, 0, 0.25),
+    rgba(35, 0, 0, 0.55)
+  );
 }
 
 /* === BACKGROUND ANIMATION === */
 @keyframes galaxyDrift {
-  0% {
-    background-position: center center;
-  }
-  100% {
-    background-position: center top;
-  }
+  0% { background-position: center center; }
+  100% { background-position: center top; }
 }
 
-/* === OVERLAY EFFECT === */
+/* === HUE SHIFT === */
 .overlay-effect {
   position: absolute;
   inset: 0;
@@ -55,7 +69,6 @@ html, body {
   pointer-events: none;
 }
 
-/* === HUE SHIFT ANIMATION === */
 @keyframes hueShift {
   0% { filter: hue-rotate(0deg); }
   100% { filter: hue-rotate(360deg); }
@@ -63,10 +76,11 @@ html, body {
 
 /* === HOME CONTENT === */
 .home-content {
-  z-index: 5;
-  color: #e0d9ff;
+  z-index: 6;
+  color: #ffeaea;
   padding: 20px;
   max-width: 90%;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
 }
 
 /* === HERO AVATAR IMAGE === */
@@ -75,27 +89,37 @@ html, body {
   height: 160px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #cc8eff;
+  border: 3px solid #ffcad4; /* 🌸 soft rose-pink border */
   margin-bottom: 20px;
-  box-shadow: 0 0 25px #cc8eff;
+  box-shadow:
+    0 0 25px #ffcad4,
+    0 0 55px rgba(255, 202, 212, 0.6),
+    0 0 90px rgba(255, 160, 180, 0.35); /* warm pastel glow */
 }
 
-/* === NEON TEXT === */
+
+/* === NEON TEXT (Heading) === */
 .neon-text {
-  color: #da70ff;
-  text-shadow: 0 0 10px #cc8eff, 0 0 30px #cc8eff;
+  color: #ffb347; /* 💥 bright neon yellow */
+  text-shadow:
+    0 0 20px #ff1744,
+    0 0 40px rgba(255, 23, 68, 0.7),
+    0 0 80px rgba(255, 0, 0, 0.4);
 }
 
-/* === TYPED SUBTITLE === */
+/* === SUBTITLE / PARAGRAPH === */
 .typed-subtitle {
   font-size: 1.4rem;
   margin-top: 10px;
-  color: #c3aaff;
+  color: #ff9fa6; /* 🌹 soft red-pink tone */
+  text-shadow:
+    0 0 15px rgba(255, 90, 90, 0.4),
+    0 0 35px rgba(255, 90, 90, 0.2);
 }
 
-/* === CURSOR BLINK ANIMATION === */
+/* === CURSOR BLINK === */
 .cursor {
-  color: #ff6fff;
+  color: #ff2d55;
   animation: blink 0.8s steps(2) infinite;
 }
 
@@ -110,8 +134,8 @@ html, body {
   margin-top: 20px;
   padding: 10px 25px;
   background-color: transparent;
-  border: 2px solid #da70ff;
-  color: #da70ff;
+  border: 2px solid #ff2d55;
+  color: #ff2d55;
   font-weight: bold;
   border-radius: 6px;
   transition: all 0.3s ease;
@@ -119,16 +143,18 @@ html, body {
 }
 
 .cta-button:hover {
-  background-color: #da70ff;
-  color: #111;
-  box-shadow: 0 0 10px #da70ff;
+  background-color: #ff2d55;
+  color: #0b0000;
+  box-shadow:
+    0 0 20px #ff2d55,
+    0 0 40px rgba(255, 45, 85, 0.5);
 }
 
 /* === SCROLL CUE === */
 .scroll-cue {
   margin-top: 20px;
   animation: bounce 2s infinite;
-  color: #b977ff;
+  color: #ff6f61; /* 🔥 coral red shimmer */
 }
 
 @keyframes bounce {
@@ -136,7 +162,7 @@ html, body {
   50% { transform: translateY(10px); }
 }
 
-/* === RESPONSIVE ADJUSTMENTS === */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   .hero-avatar {
     width: 120px;
@@ -151,11 +177,15 @@ html, body {
 /* === TITLE === */
 .home-title {
   position: absolute;
-  top: 200px;
+  top: 160px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 2.5rem;
-  color: #ffccff;
-  text-shadow: 0 0 10px rgba(255, 204, 255, 0.8);
+  font-size: 2.6rem;
+  color: #ff1744; /* 🔥 heading matches neon text */
+  text-shadow:
+    0 0 25px #ff1744,
+    0 0 50px rgba(255, 23, 68, 0.5),
+    0 0 90px rgba(255, 0, 0, 0.25);
   z-index: 10;
+  letter-spacing: 0.6px;
 }
