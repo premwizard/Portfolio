@@ -201,18 +201,26 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
+  /* Keep desktop sizes unchanged; only reduce sizes for smaller viewports */
   .navbar {
     flex-direction: column;
-    gap: 10px;
-    padding: 12px 20px;
+    gap: 8px;
+    padding: 8px 12px; /* smaller mobile padding */
+  }
+  .navbar-logo {
+    font-size: 1.05rem; /* slightly smaller logo on mobile */
   }
   .navbar-links {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     align-items: center;
   }
+  .navbar-links .nav-link {
+    font-size: 0.95rem; /* slightly reduced font-size on mobile */
+    padding: 6px 8px;   /* smaller touch target but still usable */
+  }
   .navbar-right {
-    margin-top: 10px;
+    margin-top: 6px;
   }
 }
 
