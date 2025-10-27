@@ -21,7 +21,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url('public/images/Home.png') center center / cover no-repeat;
+  background: url('/public/images/Home.png') center center / cover no-repeat;
   animation: galaxyDrift 60s linear infinite;
   text-align: center;
   color: #e0d9ff;
