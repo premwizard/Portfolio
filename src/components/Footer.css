@@ -1,13 +1,14 @@
 
 .footer {
   width: 100vw;
-  padding: 14px 0;
-  min-height: 64px; /* ensure consistent footer size */
+  /* slightly larger footer sizing to match navbar scale */
+  padding: 18px 0;
+  min-height: 72px; /* ensure consistent footer size */
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   position: relative;
   z-index: 10;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(6px);
   transition: 0.4s ease, color 0.4s ease;
   border-top: 1px solid transparent;
 }
@@ -133,9 +134,9 @@
   color: #f5e8c3;
   box-shadow: 0 0 12px rgba(255,200,120,0.06), 0 0 18px rgba(118,199,255,0.06);
   border-top: 1px solid rgba(255,200,100,0.12);
-  padding: 14px 0; /* keep consistent height */
+  padding: 18px 0; /* keep consistent height (bumped) */
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   backdrop-filter: blur(6px);
   z-index: 5;
 }
@@ -145,7 +146,7 @@
   background: rgba(30, 10, 0, 0.65);
   color: #ffd5c2;
   border-top: 1px solid rgba(255, 120, 80, 0.2);
-  padding: 14px 0; /* normalize padding */
+  padding: 18px 0; /* normalize padding (bumped) */
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
   backdrop-filter: blur(6px);
@@ -190,7 +191,7 @@
   background: rgba(5, 25, 30, 0.75);
   color: #a0fff7;
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
   box-shadow: 0 -4px 18px rgba(160, 255, 247, 0.18);
   border-top: 1px solid rgba(94, 234, 212, 0.25);
@@ -253,7 +254,7 @@
   position: relative;
   overflow: hidden;
   color: #fff;
-  padding: 18px 12px;
+  padding: 20px 12px;
   border-top: none;
 }
 
@@ -281,8 +282,8 @@
 .footer-social a + a { margin-left: 8px; } /* spacing between icons */
 .footer-social a:hover { color: var(--accent); transform: translateY(-2px); }
 
-.social-link svg { width: 28px; height: 28px; }
-.footer-social a { padding: 6px; }
+.social-link svg { width: 34px; height: 34px; }
+.footer-social a { padding: 8px; }
 
 /* subtle moving accent line to echo navbar visuals */
 .footer-unique::after {
@@ -307,7 +308,7 @@
 }
 
 .footer-copyright {
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   font-weight: 600;
 }
 
@@ -415,8 +416,8 @@
 
 /* Ensure About & Resume footer variants use the same sizing and absolute layout */
 .footer--about, .footer--resume {
-  min-height: 64px !important;
-  padding: 14px 0 !important;
+  min-height: 72px !important;
+  padding: 18px 0 !important;
 }
 .footer--about .footer-social, .footer--resume .footer-social {
   left: 0 !important;
@@ -437,8 +438,8 @@
    positioning so center doesn't shift when left icons change width. */
 .footer {
   position: relative; /* ensure absolute children are positioned relative to full-width footer */
-  min-height: 64px; /* restore previous consistent footer height */
-  padding: 14px 0; /* restore original vertical padding */
+  min-height: 72px; /* restore consistent footer height */
+  padding: 18px 0; /* restore vertical padding */
 }
 
 
@@ -478,16 +479,16 @@
 
 /* Ensure page-specific footer variants also keep the min-height (avoid collapse when children are absolute) */
 .footer-unique, .footer--home, .footer--about, .footer--skills, .footer--education, .footer--certificates, .footer--contact, .footer--projects, .footer--resume, .footer--default {
-  min-height: 64px;
+  min-height: 72px;
 }
 
 /* Strong override: ensure consistent footer height and padding across every page variant.
    Some page-specific rules (e.g. .footer-skills, .footer-education) previously changed padding
    or added larger spacing. Use !important to ensure a uniform footer size site-wide. */
 .footer, .footer-unique, .footer-inner, .footer-unique .footer-inner {
-  min-height: 64px !important;
-  padding-top: 14px !important;
-  padding-bottom: 14px !important;
+  min-height: 72px !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
 }
 
 /* Force the social icons flush to the viewport left (use a small inset for aesthetics).
