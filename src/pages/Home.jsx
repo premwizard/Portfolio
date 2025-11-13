@@ -47,19 +47,9 @@ function Home() {
         preload="auto"
         aria-hidden="true"
       >
-        {/* Prefer a 4K source when available; if you provide a 4K file name
-            place it in public/videos with the filename below (3840x2160). */}
-        <source
-          src="public/videos/153813-806526698.mp4"
-          type="video/mp4"
-          media="(min-width:1600px)"
-        />
-        {/* Fallback to the provided 1080p file */}
-        <source
-          src="public/videos/153813-806526698.mp4"
-          type="video/mp4"
-        />
-        {/* Browser will ignore if sources are missing; Home CSS keeps a background image fallback. */}
+        {/* Use leading slash so Vite resolves the public video at /videos/... */}
+        <source src="/videos/153813-806526698.mp4" type="video/mp4" />
+        {/* Browser will ignore if source is missing; Home CSS keeps a background image fallback. */}
       </video>
       <div className="animated-bg"></div>
       <h1 className="home-title">Welcome to My Space</h1>
