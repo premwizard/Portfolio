@@ -10,7 +10,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 
 .navbar {
   width: 100vw;
-  padding: 35px 60px; /* restored to original larger size */
+  padding: 32px 60px; /* restored to original larger size */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,7 +47,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
   text-decoration: none;
   color: #ffd6c2;
   font-weight: 500;
-  font-size: 1.1rem; /* ⬆️ Bigger font */
+  font-size: 1.0rem; /* ⬆️ Bigger font */
   padding: 10px 16px; /* ⬆️ Bigger clickable area */
   border-radius: 10px;
   transition: 0.3s ease;
