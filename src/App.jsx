@@ -1,11 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import GalaxyTrailCursor from './components/GalaxyTrailCursor'; // ✅ Updated cursor import
+import GalaxyTrailCursor from './components/GalaxyTrailCursor';
+import GalaxyLoader from './components/GalaxyLoader'; // ✅ New galaxy loader
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -37,32 +38,49 @@ function useScrollAnimation() {
 }
 
 function App() {
+  // ✅ Loading state for galaxy loader
+  const [isLoading, setIsLoading] = useState(true);
+
   useScrollAnimation();
 
   useEffect(() => {
+    // Initialize AOS animations
     AOS.init({ once: true, duration: 800, easing: 'ease-in-out' });
+
+    // Minimum loading time for visual effect
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Show loader for 2 seconds
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <Router>
-      <div className="app-container">
-        <GalaxyTrailCursor /> {/* ✅ New animated cursor */}
-        <Navbar />
-        <div className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/certificates" element={<Certificates />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-          <Footer />
+    <>
+      {/* ✅ GalaxyLoader - shows during initial load */}
+      <GalaxyLoader show={isLoading} duration={1.8} />
+
+      {/* ✅ Main portfolio content */}
+      <Router>
+        <div className="app-container">
+          <GalaxyTrailCursor /> {/* ✅ New animated cursor */}
+          <Navbar />
+          <div className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/resume" element={<Resume />} />
+              <Route path="/education" element={<Education />} />
+              <Route path="/certificates" element={<Certificates />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+            <Footer />
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </>
   );
 }
 
