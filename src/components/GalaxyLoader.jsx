@@ -11,7 +11,7 @@ import "../styles/galaxyLoader.css";
  *   - duration: animation duration in seconds (default: 2)
  *   - show: boolean to conditionally render (optional, defaults to true if not provided)
  */
-function GalaxyLoader({ duration = 2, show = true }) {
+function GalaxyLoader({ duration = 5, show = true }) {
   const [isVisible, setIsVisible] = useState(show);
 
   useEffect(() => {
@@ -71,7 +71,7 @@ function GalaxyLoader({ duration = 2, show = true }) {
       </div>
 
       {/* Optional loading text */}
-      <div className="loader-text">Loading your portfolio...</div>
+      <div className="loader-text">Loading portfolio...</div>
     </div>
   );
 }

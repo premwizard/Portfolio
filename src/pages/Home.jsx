@@ -37,19 +37,18 @@ function Home() {
 
   return (
     <div className="home-container" id="home">
-      {/* Background video (4K preferred if available) */}
+      {/* Background video with lazy loading optimization */}
       <video
         className="home-video"
         playsInline
         autoPlay
         muted
         loop
-        preload="auto"
+        preload="metadata"
         aria-hidden="true"
       >
-        {/* Use leading slash so Vite resolves the public video at /videos/... */}
-        <source src="/videos/153813-806526698.mp4" type="video/mp4" />
-        {/* Browser will ignore if source is missing; Home CSS keeps a background image fallback. */}
+        {/* Use metadata preload to load just info, not the entire video */}
+        <source src="/videos/HOmepage (2).mp4" type="video/mp4" />
       </video>
       <div className="animated-bg"></div>
       <h1 className="home-title">Welcome to My Space</h1>
@@ -59,6 +58,7 @@ function Home() {
           src="/images/my-profile-img.jpg"
           alt="My Avatar"
           className="hero-avatar"
+          loading="eager"
         />
         <h1>
           Hi, I'm <span className="neon-text">Prem</span>

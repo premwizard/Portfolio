@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import GalaxyTrailCursor from './components/GalaxyTrailCursor';
 import GalaxyLoader from './components/GalaxyLoader'; // ✅ New galaxy loader
+import { waitForCriticalImages, waitForVideo, preloadImages } from './utils/assetOptimizer'; // ✅ Asset loading utils
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -47,12 +48,36 @@ function App() {
     // Initialize AOS animations
     AOS.init({ once: true, duration: 800, easing: 'ease-in-out' });
 
-    // Minimum loading time for visual effect
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000); // Show loader for 2 seconds
+    // ✅ Smart loading: wait for critical assets before hiding loader
+    const loadAssets = async () => {
+      // Define critical images and videos to wait for
+      const criticalImages = [
+        '/images/my-profile-img.jpg', // Small hero avatar
+        '/images/Home.png', // Large home background
+      ];
 
-    return () => clearTimeout(timer);
+      const homeVideo = '/videos/153813-806526698.mp4';
+
+      // Preload other images in the background
+      preloadImages([
+        '/images/404-bg.jpg',
+        '/images/certificate.jpg',
+        '/images/contact.jpg',
+      ]);
+
+      // Wait for critical assets (with max timeouts)
+      await Promise.all([
+        waitForCriticalImages(criticalImages, 12000), // Wait max 12 seconds for images
+        waitForVideo(homeVideo, 8000), // Wait max 8 seconds for video metadata
+      ]);
+
+      // Ensure minimum load time for visual effect
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      setIsLoading(false);
+    };
+
+    loadAssets();
   }, []);
 
   return (

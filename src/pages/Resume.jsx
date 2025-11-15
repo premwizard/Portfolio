@@ -43,6 +43,7 @@ const ResumePage = () => {
     src="/images/image.png"
           alt="Resume"
           className="resume-iframe"
+          loading="lazy"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.5 }}
